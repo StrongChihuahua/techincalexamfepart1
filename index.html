@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+
+    <title>Technical Exam</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/gotham-6" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div class="main">
+        <img src="assets/logo.png" />
+        <div class="p-container">
+          <p class="logo-p">
+            <span
+              ><i class="fa fa-check logo-p-check" aria-hidden="true"></i
+            ></span>
+            No fee to present your case
+          </p>
+          <p class="logo-p">
+            <span
+              ><i class="fa fa-check logo-p-check" aria-hidden="true"></i
+            ></span>
+            Choose from lawyers in your area
+          </p>
+          <p class="logo-p">
+            <span
+              ><i class="fa fa-check logo-p-check" aria-hidden="true"></i
+            ></span>
+            A 100% confidential service
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="content-main">
+        <div class="content-form">
+          <div class="content-header">
+            <h1 class="content-header-title">
+              Find a Lawyer for your Legal Issue
+            </h1>
+            <h4 class="content-header-subtitle">Fast, Free and Confidential</h4>
+          </div>
+
+          <div class="content-main-form">
+            <div id="zipcode">
+              <p id="content-main-form-label">Enter Zip Code or City:</p>
+              <div id="input-container">
+                <div class="icon"><span>1</span></div>
+                <input
+                  type="text"
+                  id="autosuggest"
+                  placeholder="Does not have to be where you live"
+                />
+                <ul class="suggestion-list" id="suggestion-list"></ul>
+              </div>
+            </div>
+
+            <div id="category">
+              <p id="content-main-form-label">Choose a category:</p>
+
+              <div id="input-container-2">
+                <div>
+                  <div class="icon"><span>2</span></div>
+                </div>
+
+                <button onclick="handleOnClickCategory()">
+                  Click to choose category
+                </button>
+                <div id="dropdown-content" class="dropdown-content">
+                  <a id="drpdown-list" onclick="handleOnClickMenuItem('Family')"
+                    >Family</a
+                  >
+                  <a
+                    id="drpdown-list"
+                    onclick="handleOnClickMenuItem('Criminal Defense')"
+                    >Criminal Defense</a
+                  >
+                  <a
+                    id="drpdown-list"
+                    onclick="handleOnClickMenuItem('Business')"
+                    >Business</a
+                  >
+                  <a
+                    id="drpdown-list"
+                    onclick="handleOnClickMenuItem('Personal Injury')"
+                    >Personal Injury</a
+                  >
+                  <a
+                    id="drpdown-list"
+                    onclick="handleOnClickMenuItem('Bankruptcy & Finances')"
+                    >Bankruptcy & Finances</a
+                  >
+                  <a
+                    id="drpdown-list"
+                    onclick="handleOnClickMenuItem('Product and Services')"
+                    >Product and Services</a
+                  >
+                  <a
+                    id="drpdown-list"
+                    onclick="handleOnClickMenuItem('Employment')"
+                    >Employment</a
+                  >
+                  <a
+                    id="drpdown-list"
+                    onclick="handleOnClickMenuItem('Real Estate')"
+                    >Real Estate</a
+                  >
+                  <a
+                    id="drpdown-list"
+                    onclick="handleOnClickMenuItem('Immigration')"
+                    >Immigration</a
+                  >
+                  <a
+                    id="drpdown-list"
+                    onclick="handleOnClickMenuItem('Wills, Trusts and Estates')"
+                    >Wills, Trusts and Estates</a
+                  >
+                  <a
+                    id="drpdown-list"
+                    onclick="handleOnClickMenuItem('Government')"
+                    >Government</a
+                  >
+                  <a
+                    id="drpdown-list"
+                    onclick="handleOnClickMenuItem('Intellectual Property')"
+                    >Intellectual Property</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content-helper">
+            <p id="find-category">
+              Can't find your category?
+              <a onclick="handleOnClickMoreCategory()">Click here.</a>
+            </p>
+          </div>
+        </div>
+        <div class="client-review">
+          <div id="review-title-container">
+            <h4 id="review-title">Clients review LegalMatch lawyers</h4>
+          </div>
+
+          <div class="clients">
+            <div id="client-1">
+              <div class="avatar">
+                <img src="assets/mitchell copy.png" />
+                <p id="client-name">Mitchell M.</p>
+                <p id="client-loc">Cherry Hill, NJ</p>
+              </div>
+              <div class="main-review">
+                <div id="review">
+                  <p>Family Law</p>
+                  <div>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                  </div>
+                </div>
+                <p id="comment">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Pellentesque pharetra magna ut fermentum congue. Ut id
+                  augueegestas, lacinia mi nec, convallis tortor. Aliquam rutrum
+                  lacus at libero dignissim, et mollis tellus iaculis."
+                </p>
+
+                <a
+                  href="#"
+                  id="read-review"
+                  onclick="handleOnClickReadReview()"
+                >
+                  Read Review <span> <i class="fas fa-book-open"></i></span>
+                </a>
+              </div>
+            </div>
+
+            <div id="client-2">
+              <div class="avatar">
+                <img src="assets/joel C copy.png" />
+                <p id="client-name">Joel C.</p>
+                <p id="client-loc">Little Rock, AK</p>
+              </div>
+              <div class="main-review">
+                <div id="review">
+                  <p>Job & Employment Law</p>
+                  <div>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                  </div>
+                </div>
+                <p id="comment">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Pellentesque pharetra magna ut fermentum congue. Ut id
+                  augueegestas, lacinia mi nec, convallis tortor. Aliquam rutrum
+                  lacus at libero dignissim, et mollis tellus iaculis."
+                </p>
+
+                <a
+                  href="#"
+                  id="read-review"
+                  onclick="handleOnClickReadReview()"
+                >
+                  Read Review <span> <i class="fas fa-book-open"></i></span>
+                </a>
+              </div>
+              <div class="separation">
+                <hr />
+              </div>
+            </div>
+            <div id="client-3">
+              <div class="avatar">
+                <img src="assets/bridfita copy.png" />
+                <p id="client-name">Brigida R.</p>
+                <p id="client-loc">Dallas, TX</p>
+              </div>
+              <div class="main-review">
+                <div id="review">
+                  <p>Family Law</p>
+                  <div>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                  </div>
+                </div>
+                <p id="comment">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Pellentesque pharetra magna ut fermentum congue. Ut id
+                  augueegestas, lacinia mi nec, convallis tortor. Aliquam rutrum
+                  lacus at libero dignissim, et mollis tellus iaculis."
+                </p>
+
+                <a
+                  href="#"
+                  id="read-review"
+                  onclick="handleOnClickReadReview()"
+                >
+                  Read Review <span> <i class="fas fa-book-open"></i></span>
+                </a>
+              </div>
+              <div class="separation"><hr /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="category-list-modal" class="custom-modal">
+      <div class="custom-modal-content">
+        <div id="close-header">
+          <h5>Other Categories</h5>
+          <button class="close">&times;</button>
+        </div>
+
+        <div id="subtitle">
+          <h6>Choose the category that best fits your case</h6>
+        </div>
+
+        <div class="category-list">
+          <ul class="category-ul-list"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="category-select-modal" class="custom-modal">
+      <div class="category-select-custom-modal-content">
+        <div id="close-header">
+          <div></div>
+          <button class="close">&times;</button>
+        </div>
+
+        <div id="subtitle2">
+          <div class="icon" id="category-select-icon"><span>3</span></div>
+          <h6 id="category-select-title">
+            Which
+            <b><span id="select-category-span">Family</span> Law</b> Issue(s)
+            apply to your case?
+          </h6>
+        </div>
+
+        <div class="category-list" id="category-select">
+          <ul class="category-select-ul-list">
+            <li>
+              <label>
+                <input
+                  type="checkbox"
+                  name="checkbo"
+                  class="category-list-checkbox"
+                />
+                Adoptions</label
+              >
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                name="checkbo"
+                class="category-list-checkbox"
+              />
+              <label>Guardianship</label>
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                name="checkbo"
+                class="category-list-checkbox"
+              />
+              <label>Child Custody and Visitation</label>
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                name="checkbo"
+                class="category-list-checkbox"
+              />
+              <label>Paternity</label>
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                name="checkbo"
+                class="category-list-checkbox"
+              />
+              <label>Child Support</label>
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                name="checkbo"
+                class="category-list-checkbox"
+              />
+              <label>Separations</label>
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                name="checkbo"
+                class="category-list-checkbox"
+              />
+              <label>Divorce</label>
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                name="checkbo"
+                class="category-list-checkbox"
+              />
+              <label>Spousal Support and Alimony</label>
+            </li>
+          </ul>
+        </div>
+        <div class="find-a-lawyer">
+          <button
+            style="
+              width: 255px;
+              height: 55px;
+              border-radius: 27px;
+              background-color: #02377b;
+            "
+          >
+            FIND A LAWYER NOW
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="client-review-modal" class="custom-modal">
+      <div class="custom-modal-content" id="custom-modal-content-review">
+        <div id="close-header">
+          <h5>Client Reviews</h5>
+          <button class="close">&times;</button>
+        </div>
+
+        <div id="subtitle" style="border-top: 2px">
+          <hr id="hr-modal" />
+        </div>
+
+        <div class="client-review-content">
+          <div id="client-info">
+            <div class="review-client-avatar">
+              <img src="assets/bridfita copy.png" />
+            </div>
+            <div class="review-client-details">
+              <h3 id="client-review-name">Brigida R.</h3>
+              <p id="client-review-loc">Dallas, TX</p>
+              <p id="client-review-cat">Family Law</p>
+            </div>
+          </div>
+
+          <div id="client-overall-review">
+            <div class="overall-rating">
+              <h3 id="client-overall-rating">Rating (29 users)</h3>
+            </div>
+            <div class="overall-rating-stars">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+            </div>
+          </div>
+          <hr id="hr-modal" />
+
+          <div id="review-overflow">
+            <div id="rating-breakdown">
+              <div class="div1">
+                <span id="overall-breakdown">Overall</span>
+              </div>
+              <div class="div2">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <div class="div3">Responded in a timely manner</div>
+              <div class="div4">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+              </div>
+              <div class="div5">Answered questions clearly</div>
+              <div class="div6">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <div class="div7">Understand needs</div>
+              <div class="div8">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+              </div>
+              <div class="div9">Gave complete and clear information</div>
+              <div class="div10">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <div class="div11">Knowledgeable in legal area</div>
+              <div class="div12">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+              </div>
+              <div class="div13">Goog value for money</div>
+              <div class="div14">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <div class="div15">Would hire again</div>
+              <div class="div16">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+              </div>
+              <div class="div17">Would recommend to friend</div>
+              <div class="div18">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+            </div>
+            <hr id="hr-modal" />
+            <div class="reviews">
+              <div id="review-one">
+                <div class="rate-by">
+                  <div>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span id="by-person">by Dexter Marchal, 06/10/2016</span>
+                  </div>
+                </div>
+                <div class="review-by">
+                  Deb did a great job. Got my bench warrant set aside... was
+                  sure I was going to jail... phew. Judge seemed to respect her
+                  and I got what I wanter blah blah blah
+                </div>
+              </div>
+              <hr id="hr-modal" />
+              <div id="review-one">
+                <div class="rate-by">
+                  <div>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span id="by-person">by John Doe, 06/10/2016</span>
+                  </div>
+                </div>
+                <div class="review-by">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Praesent blandit leo magna, eu fringilla nisi pulvinar vel.
+                  Vivamus vestibulum dolor nec tortor efficitur, sed dignissim
+                  nunc elementum. Cras a scelerisque lectus, a egestas ante.
+                  Duis condimentum metus vitae sollicitudin pulvinar. Proin
+                  vestibulum in erat ut accumsan. Pellentesque at dictum enim.
+                </div>
+              </div>
+              <hr id="hr-modal" />
+            </div>
+          </div>
+          <div id="client-review-modal-footer" style="margin-top: 15px">
+            <button onclick="handleOnCloseReviewModal()">CLOSE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-main">
+        <div class="footer-content">
+          <div style="width: 20%">
+            <img src="assets/footer_logo.png" width="65%" />
+          </div>
+          <div style="width: 60%" class="footer-items">
+            <ul class="footer-menu">
+              <li class="footer-menu-item"><a href="">User Agreement</a></li>
+              <li class="footer-menu-item"><a href="">Privacy Policy</a></li>
+              <li class="footer-menu-item"><a href="">Site Map</a></li>
+            </ul>
+
+            <p class="footer-text">
+              Copyright 1999-2016 LegalMatch. All rights reserved. LegalMatch&,
+              <br />
+              the LegalMatch logo, and the tradedress are trademarks of
+              LegalMatch Patents Pending.
+            </p>
+          </div>
+          <div style="width: 20%; text-align: end">
+            <img
+              src="assets/TRUSTeSeal_logo.png"
+              width="50%"
+              style="margin-bottom: 10px"
+            />
+            <img src="assets/bbb_logo.jpg" width="50%" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
